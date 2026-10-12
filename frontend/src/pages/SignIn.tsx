@@ -8,12 +8,10 @@ export default function SignIn() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-
-    // Temporary frontend authentication
-    // FastAPI authentication will be connected later.
     navigate("/dashboard");
   };
 
@@ -29,9 +27,9 @@ export default function SignIn() {
       {/* Top status bar */}
       <div className="signin-status">
         <span className="status-indicator" />
-        NEXUS RESEARCH NETWORK
+        NEXUS DISASTER INTELLIGENCE
         <span className="status-line" />
-        SECURE ACCESS
+        SECURE LOGIN
       </div>
 
       <div className="signin-container">
@@ -45,20 +43,20 @@ export default function SignIn() {
 
           <h1>NEXUS</h1>
 
-          <p>Multimodal Disaster Intelligence Platform</p>
+          <p>Disaster Intelligence & Early Warning Platform</p>
         </div>
 
         {/* Login panel */}
         <section className="signin-card">
           <div className="card-top">
             <div>
-              <span className="card-label">AUTHENTICATION</span>
-              <h2>Research Access</h2>
+              <span className="card-label">ACCOUNT ACCESS</span>
+              <h2>Sign In</h2>
             </div>
 
             <div className="access-code">
-              <span>NODE</span>
-              <strong>NX-01</strong>
+              <span>SYSTEM</span>
+              <strong>ONLINE</strong>
             </div>
           </div>
 
@@ -66,7 +64,7 @@ export default function SignIn() {
 
           <form onSubmit={handleSubmit}>
             <div className="input-group">
-              <label htmlFor="email">RESEARCHER EMAIL</label>
+              <label htmlFor="email">EMAIL ADDRESS</label>
 
               <div className="input-wrapper">
                 <span className="input-prefix">@</span>
@@ -74,7 +72,7 @@ export default function SignIn() {
                 <input
                   id="email"
                   type="email"
-                  placeholder="researcher@nexus.ai"
+                  placeholder="name@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -83,7 +81,7 @@ export default function SignIn() {
             </div>
 
             <div className="input-group">
-              <label htmlFor="password">ACCESS KEY</label>
+              <label htmlFor="password">PASSWORD</label>
 
               <div className="input-wrapper">
                 <span className="input-prefix">◆</span>
@@ -91,7 +89,7 @@ export default function SignIn() {
                 <input
                   id="password"
                   type="password"
-                  placeholder="Enter access key"
+                  placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
@@ -99,8 +97,27 @@ export default function SignIn() {
               </div>
             </div>
 
+            <div className="signin-options">
+              <label className="remember-checkbox">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                <span>Remember me</span>
+              </label>
+
+              <button
+                type="button"
+                className="forgot-password"
+                onClick={() => alert("Password reset: Please contact your system administrator.")}
+              >
+                Forgot password?
+              </button>
+            </div>
+
             <button className="signin-button" type="submit">
-              <span>INITIALIZE SESSION</span>
+              <span>SIGN IN</span>
               <span className="button-arrow">→</span>
             </button>
           </form>
@@ -111,27 +128,20 @@ export default function SignIn() {
               ENCRYPTED CONNECTION
             </span>
 
-            <span>PROTOCOL / NEXUS-AUTH</span>
+            <button
+              type="button"
+              className="back-home-link"
+              onClick={() => navigate("/")}
+            >
+              Back to Home
+            </button>
           </div>
         </section>
 
-        {/* Research notice */}
-        <div className="signin-notice">
-          <div className="notice-icon">i</div>
-
-          <div>
-            <strong>RESEARCH ENVIRONMENT</strong>
-            <p>
-              Authorized access to the NEXUS multimodal disaster
-              intelligence research environment.
-            </p>
-          </div>
-        </div>
-
         {/* Bottom metadata */}
         <div className="signin-meta">
-          <span>FLOOD INTELLIGENCE / SATELLITE + ENVIRONMENTAL DATA</span>
-          <span>v0.1.0 / RESEARCH BUILD</span>
+          <span>FLOOD PREDICTION & SATELLITE MONITORING</span>
+          <span>NEXUS PLATFORM</span>
         </div>
       </div>
     </main>
