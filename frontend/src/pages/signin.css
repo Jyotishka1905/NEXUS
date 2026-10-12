@@ -1,0 +1,569 @@
+/* =========================================================
+   NEXUS — SIGN IN
+   ========================================================= */
+
+.signin-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(25, 91, 125, 0.16),
+      transparent 35%
+    ),
+    #05090d;
+  color: #dcebf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------------------------------------------
+   BACKGROUND GRID
+   --------------------------------------------------------- */
+
+.signin-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.28;
+
+  background-image:
+    linear-gradient(
+      rgba(80, 150, 180, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(80, 150, 180, 0.06) 1px,
+      transparent 1px
+    );
+
+  background-size: 50px 50px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+/* ---------------------------------------------------------
+   AMBIENT GLOW
+   --------------------------------------------------------- */
+
+.signin-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.signin-glow-one {
+  top: -300px;
+  left: -180px;
+  background: rgba(28, 116, 158, 0.12);
+}
+
+.signin-glow-two {
+  right: -250px;
+  bottom: -300px;
+  background: rgba(22, 85, 130, 0.12);
+}
+
+/* ---------------------------------------------------------
+   TOP STATUS
+   --------------------------------------------------------- */
+
+.signin-status {
+  position: absolute;
+  top: 25px;
+  left: 34px;
+  right: 34px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #4e7284;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #55a5c7;
+  box-shadow: 0 0 10px rgba(85, 165, 199, 0.8);
+}
+
+.status-line {
+  flex: 1;
+  height: 1px;
+  margin: 0 12px;
+
+  background: linear-gradient(
+    90deg,
+    rgba(70, 130, 160, 0.3),
+    transparent
+  );
+}
+
+/* ---------------------------------------------------------
+   MAIN CONTAINER
+   --------------------------------------------------------- */
+
+.signin-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(460px, calc(100% - 40px));
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ---------------------------------------------------------
+   BRAND
+   --------------------------------------------------------- */
+
+.signin-brand {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.brand-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 13px;
+}
+
+.brand-mark span {
+  display: block;
+  width: 4px;
+  background: #66b5d8;
+}
+
+.brand-mark span:nth-child(1) {
+  height: 10px;
+  opacity: 0.45;
+}
+
+.brand-mark span:nth-child(2) {
+  height: 18px;
+}
+
+.brand-mark span:nth-child(3) {
+  height: 10px;
+  opacity: 0.45;
+}
+
+.signin-brand h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 8vw, 58px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+
+  color: #edf7fb;
+
+  text-shadow:
+    0 0 25px rgba(100, 180, 220, 0.12);
+}
+
+.signin-brand p {
+  margin: 12px 0 0;
+
+  color: #7292a5;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+/* ---------------------------------------------------------
+   LOGIN CARD
+   --------------------------------------------------------- */
+
+.signin-card {
+  position: relative;
+
+  padding: 28px;
+
+  border: 1px solid rgba(76, 139, 169, 0.22);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13, 27, 36, 0.94),
+      rgba(5, 13, 19, 0.96)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35),
+    inset 0 1px rgba(150, 210, 230, 0.04);
+}
+
+/* Corner accents */
+
+.signin-card::before,
+.signin-card::after {
+  content: "";
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  pointer-events: none;
+}
+
+.signin-card::before {
+  top: -1px;
+  left: -1px;
+
+  border-top: 1px solid #5ba4c6;
+  border-left: 1px solid #5ba4c6;
+}
+
+.signin-card::after {
+  right: -1px;
+  bottom: -1px;
+
+  border-right: 1px solid #5ba4c6;
+  border-bottom: 1px solid #5ba4c6;
+}
+
+/* ---------------------------------------------------------
+   CARD HEADER
+   --------------------------------------------------------- */
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card-label {
+  color: #4f91ae;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+}
+
+.card-top h2 {
+  margin: 8px 0 0;
+
+  color: #c8dce5;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.access-code {
+  text-align: right;
+}
+
+.access-code span {
+  display: block;
+
+  color: #496c7d;
+  font-size: 7px;
+  letter-spacing: 0.16em;
+}
+
+.access-code strong {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #75a8bd;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+.card-divider {
+  height: 1px;
+  margin: 23px 0;
+
+  background: rgba(75, 130, 155, 0.14);
+}
+
+/* ---------------------------------------------------------
+   INPUTS
+   --------------------------------------------------------- */
+
+.input-group {
+  margin-bottom: 19px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #557b8d;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+
+  height: 45px;
+
+  border: 1px solid rgba(77, 132, 157, 0.22);
+
+  background: rgba(3, 10, 15, 0.7);
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: rgba(85, 165, 200, 0.55);
+
+  background: rgba(7, 20, 28, 0.85);
+}
+
+.input-prefix {
+  width: 42px;
+
+  text-align: center;
+
+  color: #46758c;
+  font-size: 11px;
+
+  border-right: 1px solid rgba(77, 132, 157, 0.14);
+}
+
+.input-wrapper input {
+  flex: 1;
+
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  padding: 0 14px;
+
+  background: transparent;
+
+  color: #d8eaf1;
+
+  font-size: 12px;
+}
+
+.input-wrapper input::placeholder {
+  color: #3f5967;
+}
+
+/* ---------------------------------------------------------
+   BUTTON
+   --------------------------------------------------------- */
+
+.signin-button {
+  position: relative;
+
+  width: 100%;
+  height: 48px;
+
+  margin-top: 7px;
+
+  border: 1px solid rgba(91, 174, 211, 0.45);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(25, 90, 120, 0.4),
+      rgba(38, 117, 148, 0.22)
+    );
+
+  color: #b9e2f2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  font-size: 9px;
+  letter-spacing: 0.17em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.signin-button:hover {
+  border-color: rgba(100, 195, 230, 0.8);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(29, 111, 147, 0.55),
+      rgba(38, 130, 163, 0.3)
+    );
+
+  box-shadow:
+    0 0 25px rgba(45, 150, 190, 0.1);
+}
+
+.button-arrow {
+  font-size: 17px;
+  line-height: 0;
+  color: #6fb7d5;
+}
+
+/* ---------------------------------------------------------
+   CARD FOOTER
+   --------------------------------------------------------- */
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 19px;
+  padding-top: 16px;
+
+  border-top: 1px solid rgba(75, 130, 155, 0.1);
+
+  color: #405d6b;
+
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+.card-footer span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-footer i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #4e9b78;
+}
+
+/* ---------------------------------------------------------
+   RESEARCH NOTICE
+   --------------------------------------------------------- */
+
+.signin-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-top: 14px;
+  padding: 14px 16px;
+
+  border: 1px solid rgba(65, 115, 140, 0.12);
+
+  background: rgba(7, 17, 23, 0.55);
+}
+
+.notice-icon {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(80, 145, 170, 0.35);
+  border-radius: 50%;
+
+  color: #59859a;
+
+  font-size: 10px;
+}
+
+.signin-notice strong {
+  color: #52798b;
+  font-size: 7px;
+  letter-spacing: 0.15em;
+}
+
+.signin-notice p {
+  margin: 6px 0 0;
+
+  color: #526a76;
+
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------------
+   BOTTOM METADATA
+   --------------------------------------------------------- */
+
+.signin-meta {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 22px;
+
+  color: #334b57;
+
+  font-size: 7px;
+  letter-spacing: 0.1em;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+  .signin-status {
+    left: 18px;
+    right: 18px;
+  }
+
+  .signin-status .status-line {
+    margin: 0 5px;
+  }
+
+  .signin-container {
+    width: calc(100% - 28px);
+  }
+
+  .signin-card {
+    padding: 22px 18px;
+  }
+
+  .card-top {
+    flex-direction: column;
+  }
+
+  .access-code {
+    text-align: left;
+  }
+
+  .card-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .signin-meta {
+    flex-direction: column;
+    gap: 7px;
+    text-align: center;
+  }
+}

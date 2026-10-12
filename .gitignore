@@ -1,0 +1,25 @@
+# Python & Virtual Environments
+.venv/
+.venv*/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pt
+*.pth
+
+# Large Datasets & Archives (>100MB)
+ml/data/raw/
+ml/data/environmental/raw/
+ml/data/environmental/raw_history/
+*.zip
+*.tar.gz
+
+# Frontend dependencies & build outputs
+frontend/node_modules/
+frontend/dist/
+*.log
+
+# Sensitive credentials
+.env
+.s3cfg
+*.pem

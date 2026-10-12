@@ -1,0 +1,2 @@
+model,accuracy,precision,recall,f1,roc_auc,test_samples,positive_samples,negative_samples
+temporal_environmental,0.391304347826087,0.0,0.0,0.0,0.4276895943562611,69,42,27

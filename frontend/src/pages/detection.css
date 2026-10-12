@@ -1,0 +1,267 @@
+.detection-page {
+  min-height: 100vh;
+  padding: 32px;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(30, 100, 150, 0.12), transparent 35%),
+    #050a0f;
+  color: #d9edf7;
+  font-family: Arial, sans-serif;
+}
+
+.back-button {
+  margin-bottom: 24px;
+  padding: 8px 12px;
+  border: 1px solid rgba(70, 140, 190, 0.25);
+  background: transparent;
+  color: #62849d;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: #75c8f5;
+  border-color: rgba(45, 157, 230, 0.5);
+}
+
+.detection-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.eyebrow {
+  color: #4e8cac;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  margin-bottom: 10px;
+}
+
+.detection-header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.detection-header p {
+  color: #7894a5;
+  font-size: 14px;
+}
+
+.model-status {
+  border: 1px solid rgba(80, 160, 200, 0.2);
+  padding: 10px 14px;
+  color: #6c9ab2;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: #5c9fbc;
+}
+
+section {
+  margin-bottom: 32px;
+}
+
+section h2,
+.panel-title,
+.note-marker {
+  color: #5286a2;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
+
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.model-card,
+.panel,
+.prediction-panel,
+.research-note {
+  border: 1px solid rgba(80, 140, 170, 0.14);
+  background: rgba(8, 18, 26, 0.72);
+}
+
+.model-card {
+  padding: 22px;
+}
+
+.model-card.active {
+  border-color: rgba(55, 160, 215, 0.45);
+}
+
+.model-number {
+  color: #467c96;
+  font-size: 10px;
+}
+
+.model-card h3 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.model-card p {
+  margin: 0;
+  color: #718997;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.detection-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.upload-area {
+  min-height: 190px;
+  border: 1px dashed rgba(80, 150, 190, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-area input {
+  display: none;
+}
+
+.upload-icon {
+  font-size: 32px;
+  color: #5085a0;
+  margin-bottom: 12px;
+}
+
+.upload-area strong {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.upload-area span {
+  margin-top: 8px;
+  color: #617d8d;
+  font-size: 11px;
+}
+
+.environment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.data-field {
+  padding: 16px;
+  border: 1px solid rgba(80, 140, 170, 0.1);
+}
+
+.data-field label {
+  display: block;
+  color: #527d92;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+
+.data-field div {
+  color: #849dab;
+  font-size: 14px;
+}
+
+.prediction-panel {
+  padding: 22px;
+}
+
+.prediction-status {
+  color: #6a7880;
+}
+
+.prediction-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.prediction-label,
+.prediction-metric span {
+  color: #527d92;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.prediction-value {
+  margin-top: 12px;
+  font-size: 25px;
+  color: #607783;
+}
+
+.prediction-metric {
+  padding-left: 20px;
+  border-left: 1px solid rgba(80, 140, 170, 0.12);
+}
+
+.prediction-metric strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #7b919d;
+}
+
+.research-note {
+  padding: 20px;
+  border-left: 2px solid rgba(60, 150, 200, 0.5);
+}
+
+.research-note p {
+  max-width: 850px;
+  margin: 12px 0 0;
+  color: #91a8b4;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .detection-page {
+    padding: 20px;
+  }
+
+  .detection-header {
+    flex-direction: column;
+  }
+
+  .model-grid,
+  .detection-grid,
+  .prediction-content {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-metric {
+    padding-left: 0;
+    border-left: none;
+  }
+}

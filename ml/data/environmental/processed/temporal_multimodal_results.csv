@@ -1,0 +1,2 @@
+model,accuracy,precision,recall,f1,roc_auc,test_samples,positive_samples,negative_samples
+temporal_multimodal,0.463768115942029,1.0,0.11904761904761904,0.2127659574468085,0.7336860670194003,69,42,27

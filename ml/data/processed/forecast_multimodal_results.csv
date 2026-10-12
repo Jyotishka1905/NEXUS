@@ -1,0 +1,2 @@
+model,accuracy,precision,recall,f1,roc_auc,pr_auc,f1_short_lead,f1_long_lead,test_samples
+multimodal_forecasting,0.75,0.7142857142857143,0.8333333333333334,0.7692307692307693,0.7500000000000001,0.7329365079365079,0.8,0.75,12
